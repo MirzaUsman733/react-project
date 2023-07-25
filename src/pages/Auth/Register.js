@@ -4,6 +4,7 @@ import { useAuthContext } from 'contexts/AuthContext'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, firestore } from 'config/firebase'
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
+import { Link } from 'react-router-dom'
 
 const { Title } = Typography
 
@@ -82,6 +83,8 @@ export default function Register() {
 
                 <Button type='primary' htmlType='submit' className='w-100' loading={isProcessing} onClick={handleRegister}>Register</Button>
               </Form>
+              <Link to="/auth/login" className='text-center mt-3 text-primary'>Already have account</Link>
+
             </div>
           </div>
         </div>

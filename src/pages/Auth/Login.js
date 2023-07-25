@@ -3,6 +3,7 @@ import { Button, Divider, Form, Input, Typography, message } from 'antd'
 import { useAuthContext } from 'contexts/AuthContext'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from 'config/firebase'
+import { Link } from 'react-router-dom'
 
 const { Title } = Typography
 
@@ -54,6 +55,7 @@ export default function Login() {
 
                 <Button type='primary' htmlType='submit' className='w-100' loading={isProcessing} onClick={handleLogin}>Login</Button>
               </Form>
+                <Link to="/auth/register" className='text-center mt-3 text-primary'>Create the account</Link>
             </div>
           </div>
         </div>
